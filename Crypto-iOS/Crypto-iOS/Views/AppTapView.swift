@@ -8,26 +8,21 @@
 import Foundation
 import SwiftUI
 
-struct AppTapView: View {
+struct AppTabView: View {
     var body: some View {
-        TabView{
-            .tabItem {
-                Label("Received", systemImage: "tray.and.house.fill")
-            }
-            /*Tab("Home", systemImage: "house"){
+        TabView {
+            Tab("Home", systemImage: "house") {
                 AssetList()
-                    .navigationTitle("Home")
             }
-            Tab("Favourities", systemImage: "star"){
-                Text ("Favoutities")
+            Tab("Favourites", systemImage: "star") {
+                Text("Favourites")
             }
-            Tab("Settings", systemImage: "gear"){
-                Text ("Settings")
-            }*/
+            Tab("Settings", systemImage: "gear") {
+                SettingsView()
+            }
         }
     }
 }
-
 struct AppTabView_Previews: PreviewProvider {
     static var previews: some View {
         AppTapView()
